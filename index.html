@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="introScreen" class="intro-wrapper">
+  <div class="intro-left">
+    <h1>🚀 Ready to Get Things Done?</h1>
+    <p>❓ Feeling overwhelmed with tasks?<br>
+       🤔 Forgetting deadlines too often?<br>
+       📝 Tired of sticky notes everywhere?</p>
+
+    <p>✅ Say hello to your digital task buddy.<br>
+       🧠 Organize. 📆 Plan. ✅ Achieve.</p>
+
+    <button onclick="startApp()">✨ Let's Go →</button>
+  </div>
+
+  <div class="intro-right">
+    <img src="https://static.vecteezy.com/system/resources/previews/024/620/958/non_2x/to-do-list-task-management-planned-prioritized-time-management-businesswoman-do-daily-tasks-planning-with-checklist-on-notepad-paper-agreement-concept-illustration-vector.jpg" alt="Checklist Image" />
+  </div>
+</div>
+
+<div class="container" id="mainApp" style="display: none;">
+  
+<div class="user-greeting" id="greetingText">👋 Hello! Ready to conquer your day?</div>
+
+  <div class="todo-header">
+    <h2>🎯 Your Daily Mission Hub</h2>
+    <p>🧠 Let's turn ideas into action. One task at a time.</p>
+  </div>
+
+  <hr class="section-divider">
+  <h3>✍️ Add New Task</h3>
+  <div class="task-input">
+    <input type="text" id="taskName" placeholder="Enter your task" />
+    <input type="date" id="dueDate" />
+    <div class="priority-radio">
+      <label><input type="radio" name="priority" value="Low" checked /> Low</label>
+      <label><input type="radio" name="priority" value="Medium" /> Medium</label>
+      <label><input type="radio" name="priority" value="High" /> High</label>
+    </div>
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <hr class="section-divider">
+  <h3>🔍 Search & Filters</h3>
+  <div class="controls">
+    <input type="text" id="searchBox" oninput="renderTasks()" placeholder="Search tasks..." />
+    <div class="filters">
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+  <h3>📋 Your Task List</h3>
+  <ul id="taskList"></ul>
+</div>
+
+<div id="emojiBot" class="emoji-bot">📋 “Ready when you are!”</div>
+
+<script src="script.js"></script>
+</body>
+</html>
